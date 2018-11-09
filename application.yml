@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jtdb?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: 123
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    show-sql: true
+    database: mysql
+
+  redis:
+    timeout: 1000
+    cluster:
+      nodes: 192.168.161.134:7000,192.168.161.134:7001,192.168.161.134:7002,192.168.161.134:7003,192.168.161.134:7004,192.168.161.134:7005,192.168.161.134:7006,192.168.161.134:7007,192.168.161.134:7008
+    pool:
+      max-idle: 300
+      min-idle: 100
+      max-active: 1000
+      max-wait: 1000
+  freemarker:
+    request-context-attribute: req
+    suffix: .html
+    content-type: text/html
+    enabled: true
+    cache: false
+    template-loader-path: classpath:/templates/
+    charset: UTF-8
+
+server:
+  port: 80
+  address: 127.0.0.1
+
+
+
